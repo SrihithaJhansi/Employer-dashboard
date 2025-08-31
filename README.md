@@ -1,50 +1,53 @@
-Employer Dashboard
-A full-stack web application for managing employee records with role-based authentication, built with React frontend, Python Tornado backend, and MySQL database.
+# Employer Dashboard  
 
-🚀 Features
-Role-Based Access Control: Admin and Employee roles with different permissions
+A full-stack web application for managing employee records with role-based authentication, built with React frontend, Python Tornado backend, and MySQL database.  
 
-Employee Management: Add, view, search, and delete employees (Admin only)
+---
 
-Profile Management: Employees can edit their own profiles (name and email only)
+## 🚀 Features  
+- **Role-Based Access Control**: Admin and Employee roles with different permissions  
+- **Employee Management**: Add, view, search, and delete employees (Admin only)  
+- **Profile Management**: Employees can edit their own profiles (name and email only)  
+- **Authentication**: Secure login system with session management  
+- **Search Functionality**: Real-time search across all employee fields  
+- **Responsive Design**: Clean black and white theme that works on all devices  
 
-Authentication: Secure login system with session management
+---
 
-Search Functionality: Real-time search across all employee fields
+## 🛠️ Tech Stack  
+- **Frontend**: React 18, React Router DOM  
+- **Backend**: Python 3.8+, Tornado Web Server  
+- **Database**: MySQL 8.0+  
+- **Authentication**: Session-based with role permissions  
+- **Styling**: Custom CSS (No external frameworks)  
 
-Responsive Design: Clean black and white theme that works on all devices
+---
 
-🛠️ Tech Stack
-Frontend: React 18, React Router DOM
+## 📋 Prerequisites  
 
-Backend: Python 3.8+, Tornado Web Server
+Before running this application, ensure you have installed:  
 
-Database: MySQL 8.0+
+### System Requirements  
+- Node.js (v14 or higher)  
+- Python (v3.8 or higher)  
+- MySQL Server (v8.0 or higher)  
 
-Authentication: Session-based with role permissions
-
-Styling: Custom CSS (No external frameworks)
-
-📋 Prerequisites
-Before running this application, ensure you have installed:
-
-System Requirements
-Node.js (v14 or higher) 
-Python (v3.8 or higher) 
-MySQL Server (v8.0 or higher) 
-Python Packages (Backend)
-bash
+### Python Packages (Backend)  
+```bash
 pip install tornado==6.4.0
 pip install mysql-connector-python==8.2.0
 pip install python-dotenv==1.0.0  # For environment variables
 Node.js Packages (Frontend)
 bash
+Copy code
 npm install react@18.2.0
 npm install react-dom@18.2.0
 npm install react-router-dom@6.8.0
 npm install vite@4.1.0  # Development server and build tool
 npm install @vitejs/plugin-react@3.1.0
 📁 Project Structure
+plaintext
+Copy code
 employer-dashboard/
 ├── backend/
 │   ├── app.py                 # Tornado server entry point
@@ -78,21 +81,20 @@ employer-dashboard/
 └── README.md
 🚀 Installation & Setup
 Clone the Repository
-
 bash
+Copy code
 git clone <repository-url>
 cd employer-dashboard
 Database Setup
-
 Create MySQL Database
-
 sql
+Copy code
 CREATE DATABASE employer_dashboard;
 Configure Database Connection
-
 Update backend/db.py with your MySQL credentials:
 
 python
+Copy code
 # Default configuration (modify as needed)
 self.host = os.getenv('DB_HOST', 'localhost')
 self.database = os.getenv('DB_NAME', 'employer_dashboard')
@@ -100,13 +102,13 @@ self.user = os.getenv('DB_USER', 'root')
 self.password = os.getenv('DB_PASSWORD', 'your_mysql_password')
 self.port = os.getenv('DB_PORT', 3306)
 Backend Setup
-
 bash
+Copy code
 cd backend
 pip install -r requirements.txt
 Start Backend Server
-
 bash
+Copy code
 python app.py
 The backend will start on http://localhost:8000 and automatically:
 
@@ -117,13 +119,13 @@ Insert default admin user
 Set up API endpoints
 
 Frontend Setup
-
 bash
+Copy code
 cd ../frontend
 npm install
 Start Development Server
-
 bash
+Copy code
 npm run dev
 The frontend will start on http://localhost:3000
 
@@ -134,12 +136,13 @@ Username: admin
 
 Password: admin123
 
-Note: Change the default password after first login for security.
+⚠️ Change the default password after first login for security.
 
 🔧 Environment Variables
 Create a .env file in the backend directory for production:
 
 env
+Copy code
 DB_HOST=localhost
 DB_NAME=employer_dashboard
 DB_USER=your_mysql_username
@@ -154,14 +157,14 @@ DELETE	/api/employees/:id	Delete employee	Admin only
 GET	/api/profile/:id	Get employee profile	All authenticated users
 PUT	/api/profile/:id	Update profile	Owner only (restricted fields)
 POST	/api/login	User authentication	Public
+
 🏗️ Build for Production
 Build Frontend
-
 bash
+Copy code
 cd frontend
 npm run build
 Production Deployment
-
 Build the frontend as shown above
 
 Serve the frontend/dist folder using a web server (Nginx, Apache)
@@ -183,7 +186,6 @@ Regularly update dependencies for security patches
 
 🐛 Troubleshooting
 Common Issues
-
 MySQL Connection Error
 
 Verify MySQL server is running
@@ -203,18 +205,3 @@ CORS Errors
 Update CORS origins in all handler files
 
 Ensure frontend and backend URLs match
-
-Module Not Found Errors
-
-Verify all Python and Node.js dependencies are installed
-
-Check import paths in all files
-
-Logs
-
-Backend logs are displayed in the console
-
-Frontend errors can be viewed in browser developer tools
-Git - Download here
-
-Python Packages (Backend)
