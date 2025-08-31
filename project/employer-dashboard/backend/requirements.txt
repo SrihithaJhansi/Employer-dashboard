@@ -1,0 +1,3 @@
+tornado==6.4.0
+mysql-connector-python==8.2.0
+tornado-cors==0.2.0
